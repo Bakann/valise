@@ -1,112 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+  <meta charset="utf-8" />
+  <title>Firebase Meetup</title>
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.9.2/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.9.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.9.2/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<body>
+  <div id="app">
+    <img
+      src="https://firebasestorage.googleapis.com/v0/b/fir-images-a61c9.appspot.com/o/codelab.png?alt=media&token=f45f808c-ce40-4b34-944c-8d8fac00e13d"
+    />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <a href="https://www.amazon.fr/dp/B00GN0S81Y?&linkCode=li1&tag=deebak04-21&linkId=f3321fa722974692a8c05996654480c2&language=fr_FR&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00GN0S81Y&Format=_SL110_&ID=AsinImage&MarketPlace=FR&ServiceVersion=20070822&WS=1&tag=deebak04-21&language=fr_FR" ></a><img src="https://ir-fr.amazon-adsystem.com/e/ir?t=deebak04-21&language=fr_FR&l=li1&o=8&a=B00GN0S81Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-      <a href="https://www.amazon.fr/dp/B00GN0S81Y?&linkCode=li2&tag=deebak04-21&linkId=404463c5c978ca6318237f908ef1e6c2&language=fr_FR&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00GN0S81Y&Format=_SL160_&ID=AsinImage&MarketPlace=FR&ServiceVersion=20070822&WS=1&tag=deebak04-21&language=fr_FR" ></a><img src="https://ir-fr.amazon-adsystem.com/e/ir?t=deebak04-21&language=fr_FR&l=li2&o=8&a=B00GN0S81Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-      <a href="https://www.amazon.fr/dp/B00GN0S81Y?&linkCode=li3&tag=deebak04-21&linkId=3938990f0e5a0af3430811616aadfe24&language=fr_FR&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-eu.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00GN0S81Y&Format=_SL250_&ID=AsinImage&MarketPlace=FR&ServiceVersion=20070822&WS=1&tag=deebak04-21&language=fr_FR" ></a><img src="https://ir-fr.amazon-adsystem.com/e/ir?t=deebak04-21&language=fr_FR&l=li3&o=8&a=B00GN0S81Y" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Valise de maternité</h1>
-      
-      <p>Une valise de maternité est un sac ou une valise que les futures mamans préparent avant l'arrivée de leur bébé. Cette valise contient tout ce dont la mère et le bébé auront besoin pendant leur séjour à la maternité. Voici une liste non exhaustive d'éléments à inclure dans votre valise de maternité :
+    <section id="event-details-container">
+      <h1>Firebase Meetup</h1>
 
-Pour la maman :
-1. Carte d'identité, carte vitale et dossier médical
-2. Vêtements confortables (chemises de nuit, pyjamas, peignoir, chaussons)
-3. Sous-vêtements (culottes jetables, soutiens-gorge d'allaitement)
-4. Serviettes hygiéniques ou protections pour les saignements post-accouchement
-5. Coussinets d'allaitement
-6. Nécessaire de toilette (brosse à dents, dentifrice, savon, shampooing, déodorant, etc.)
-7. Un brumisateur d'eau pour se rafraîchir pendant le travail
-8. Chargeur de téléphone portable
-9. Des snacks et boissons pour l'énergie
-10. Vêtements pour sortir de la maternité
+      <p><i class="material-icons">calendar_today</i> October 30</p>
+      <p><i class="material-icons">location_city</i> San Francisco</p>
+      <!-- ADD THE RSVP BUTTON HERE -->
+    </section>
 
-Pour le bébé :
-1. Vêtements adaptés à la taille et à la saison (body, pyjamas, chaussettes, bonnet, etc.)
-2. Couvertures ou gigoteuses
-3. Couches pour nouveau-nés
-4. Lingettes ou coton et liniment pour nettoyer bébé
-5. Biberons et tétines si vous ne prévoyez pas d'allaiter (l'hôpital peut aussi en fournir)
-6. Trousseau pour sortir de la maternité (manteau, combinaison, nid d'ange, etc.)
-7. Siège auto adapté et homologué pour le trajet de retour à la maison
+    <hr />
 
-Il est conseillé de préparer cette valise quelques semaines avant la date prévue de l'accouchement, afin d'éviter le stress de dernière minute et de vous assurer que vous avez tout ce dont vous avez besoin pour votre séjour à la maternité.</p>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <section id="firebaseui-auth-container"></section>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
-</html>
+    <section id="description-container">
+      <h2>What we'll be doing</h2>
+      <p>Join us for a day full of Firebase Workshops and Pizza!</p>
+    </section>
+
+    <section id="guestbook-container"></section>
+  </div>
+</body>
